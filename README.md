@@ -34,12 +34,10 @@ beautiful Material 3 UI.
 - **Local Database Caching**
     - All repository data is cached in Room database
     - App works offline with cached data
-    - Automatic sync when connection is available
-    - Data refresh strategy (5-minute cache validity)
 
 ## Architecture
 
-The app follows **Clean Architecture** principles with **MVVM** pattern:
+The app follows **Clean Architecture** principles with **MVI** pattern:
 
 ```
 ├── data/
@@ -94,15 +92,6 @@ The app follows **Clean Architecture** principles with **MVVM** pattern:
 - **StateFlow** - State management
 - **Coroutines** - Asynchronous programming
 
-## Project Setup
-
-### Prerequisites
-
-- Android Studio Hedgehog or later
-- Minimum SDK: 24 (Android 7.0)
-- Target SDK: 36
-- Kotlin 2.0.21
-
 ### Installation
 
 1. Clone the repository:
@@ -142,24 +131,7 @@ Parameters:
 ### Offline Support
 
 - Repository pattern with dual data sources (network + database)
-- Automatic cache invalidation after 5 minutes
 - Fallback to cached data on network errors
-- Background sync when connection is restored
-
-### Error Handling
-
-- Graceful error states with retry options
-- User-friendly error messages
-- Automatic error dismissal
-
-### UI/UX Highlights
-
-- Material 3 design language
-- Edge-to-edge display support
-- Smooth animations and transitions
-- Pull-to-refresh gesture
-- Loading states and progress indicators
-- Empty and error states
 
 ## Building for Release
 
@@ -174,30 +146,6 @@ The APK will be generated in:
 ```
 app/build/outputs/apk/release/app-release.apk
 ```
-
-## Testing
-
-The app follows a clean architecture which makes it easily testable:
-
-- **Unit Tests**: ViewModels, Use Cases, Repository
-- **Integration Tests**: Database operations, API calls
-- **UI Tests**: Navigation, User interactions
-
-Run tests:
-
-```bash
-./gradlew test
-./gradlew connectedAndroidTest
-```
-
-## Future Enhancements
-
-- Search and filter repositories
-- Sort options (name, date, stars)
-- Repository statistics
-- Dark theme support
-- Additional repository details (stars, forks, issues)
-- Share repository functionality
 
 ## License
 

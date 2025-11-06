@@ -25,7 +25,6 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import dev.medetzhakupov.githubapp.domain.model.Repository
-import dev.medetzhakupov.githubapp.presentation.navigation.Screen
 
 @Composable
 fun RepositoriesScreen(
